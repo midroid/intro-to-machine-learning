@@ -26,3 +26,25 @@ clf = tree.DecisionTreeClassifier()
 clf = clf.fit(X,Y)
 print(clf.predict([[2. , 2.]]))
 print(clf.predict_proba([[2., 2.]]))
+
+#K nearest neighbours
+
+#adaboost
+
+#random forest
+
+from sklearn.neighbors import NearestNeighbors
+import numpy as np
+X = np.array([[-1, -1], [-2, -1], [-3, -2], [1, 1], [2, 1], [3, 2]])
+clf = NearestNeighbors(n_neighbors=2, algorithm='ball_tree').fit(X)
+distances, indices = clf.kneighbors(X)
+print(indices)
+print(distances)
+
+X = [[0], [1], [2], [3]]
+y = [0, 0, 1, 1]
+from sklearn.neighbors import KNeighborsClassifier
+neigh = KNeighborsClassifier(n_neighbors = 3)
+neigh.fit(X, y)
+print(neigh.predict([1.1]))
+print(neigh.predict_proba([[0.9]]))
