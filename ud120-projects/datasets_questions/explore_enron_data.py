@@ -19,4 +19,32 @@ import pickle
 
 enron_data = pickle.load(open("../final_project/final_project_dataset.pkl", "r"))
 
+print(len(enron_data))
+count = 0
+mailcount = 0
+import math
+for data in enron_data:
+    # print len(data)
+    # print(enron_data[data])
+    # print(len(enron_data[data]))
+    # if (enron_data[data]["poi"]==1):
+    #     count = count + 1
+    if (math.isnan(float(enron_data[data]["salary"]))):
+        count = count + 1
+    if (enron_data[data]["email_address"] != enron_data[data]["email_address"]):
+            mailcount = mailcount + 1
+    print(enron_data[data]["email_address"])
+    
+print(count)
+print(mailcount)
+# print(enron_data["PRENTICE JAMES"]["total_stock_value"])
+# print(enron_data["COLWELL WESLEY"]["from_this_person_to_poi"])
+# print(enron_data["SKILLING JEFFREY K"]["exercised_stock_options"])
+
+# print(enron_data["SKILLING JEFFREY K"]["total_payments"])
+# print(enron_data["LAY KENNETH L"]["total_payments"])
+# print(enron_data["FASTOW ANDREW S"]["total_payments"])
+
+
+
 
