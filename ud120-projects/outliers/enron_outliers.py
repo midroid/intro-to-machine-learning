@@ -15,19 +15,19 @@ data = featureFormat(data_dict, features)
 
 
 ### your code below
-max = 0
-maxsecond = 0
+maxbonus = 5000000
+maxsalary = 1000000
+outliers = []
 for point in data:
     salary = point[0]
     bonus = point[1]
-    if (salary > max):
-        max = salary
-    elif (salary > maxsecond):
-        maxsecond = salary
+    if (bonus > maxbonus):
+        if (salary > maxsalary):
+            outliers.append(bonus)
     matplotlib.pyplot.scatter(salary, bonus)
 
 for datas in data_dict:
-    if (data_dict[datas]["salary"] in [max, maxsecond]):
+    if (data_dict[datas]["bonus"] in outliers):
         print(datas)
 
 matplotlib.pyplot.xlabel("salary")
