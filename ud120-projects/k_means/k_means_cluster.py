@@ -88,6 +88,12 @@ for data in data_dict:
 
 print(minso, maxso)
 
+from sklearn.preprocessing import MinMaxScaler
+mms = MinMaxScaler()
+traindata = numpy.array([[minso],[1000000.],[maxso]])
+tdmms = mms.fit_transform(traindata)
+print(tdmms)
+
 minso = 1000000000000
 maxso = 0
 
@@ -101,7 +107,9 @@ for data in data_dict:
 
 print(minso, maxso)
 
-
+traindata = numpy.array([[minso],[200000.],[maxso]])
+tdmms = mms.fit_transform(traindata)
+print(tdmms)
 
 ### rename the "name" parameter when you change the number of features
 ### so that the figure gets saved to a different file
