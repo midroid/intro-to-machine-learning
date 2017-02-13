@@ -55,7 +55,7 @@ for name, from_person in [("sara", from_sara), ("chris", from_chris)]:
             ### use str.replace() to remove any instances of the words
             ### ["sara", "shackleton", "chris", "germani"]
 
-            for signwords in ["sara", "shackleton", "chris", "germani"]:
+            for signwords in ["sara", "shackleton", "chris", "germani", "sshacklensf", "cgermannsf"]:
                 stemmed_text_string = stemmed_text_string.replace(signwords, '')
             # stemmed_text_string.replace("  ", "")
 
